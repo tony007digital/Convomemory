@@ -1,0 +1,51 @@
+### Project Summary: ConvoMemory
+
+**Objective**:
+The primary goal of ConvoMemory is to create a web-based application capable of capturing, managing, and recalling conversations using LangChain and OpenAI. The app aims to provide an interactive chat interface for users to engage with a conversational AI while maintaining a history of past interactions.
+
+**Key Features**:
+1. **Conversation Management**: Capture and display ongoing conversations, maintain a history of past interactions.
+2. **Interactive Chat Interface**: User-friendly interface for initiating and continuing conversations.
+3. **Memory Persistence**: Ability to save and load conversation history to ensure continuity across sessions.
+4. **Integration with OpenAI**: Utilize OpenAI for processing user inputs and generating meaningful responses.
+
+**Technologies**:
+- **Frontend**: Streamlit for creating an interactive web interface.
+- **Backend**: LangChain for managing conversation flow and OpenAI for language processing.
+- **Environment Management**: Virtual environment to manage dependencies and python-dotenv for handling environment variables.
+
+**Progress Overview**:
+1. **Project Initialization**: Completed.
+   - Version control setup, environment setup, and dependency installation have been completed.
+2. **Project Structuring**: Completed.
+   - Directory structure has been outlined and necessary files have been created.
+3. **Development**: In Progress.
+   - OpenAI agent and memory manager have been coded.
+   - Streamlit interface has been initialized in `main.py`.
+   - The main interaction loop and memory persistence are outlined in `main.py`.
+4. **Testing**: Not Started.
+   - Local testing needs to be conducted to ensure all features are working as intended.
+5. **Deployment**: Not Started.
+   - A suitable platform for deployment needs to be identified and the app needs to be deployed.
+6. **Documentation**: Not Started.
+   - Documentation, including a README file detailing setup and usage instructions, needs to be created.
+
+**Next Steps**:
+- Proceed with thorough testing of the application locally to identify and fix any bugs or issues.
+- Prepare for deployment by researching and selecting a suitable hosting platform.
+- Create comprehensive documentation to guide users and developers.
+
+ConvoMemory is shaping up with the core functionalities coded. The focus now should shift towards testing the application to ensure it meets the desired objectives, followed by preparing for deployment and creating thorough documentation.
+
+
+So far, we've identified an issue with the OpenAIAgent class in the openai_agent.py file. The class is trying to extend the Agent class from the langchain package, but Python is unable to find this Agent class, resulting in an AttributeError.
+
+To resolve this issue, we need to ensure that the Agent class is correctly imported from the langchain package. Here's what we plan to do:
+
+1. Verify the existence of the Agent class in the langchain package: We need to check the langchain package's documentation or source code to confirm that the Agent class exists.
+
+2. Check the installed version of the langchain package: We'll use the command pip show langchain to check the installed version. If the package version is outdated, it might not contain the Agent class, and we'll need to update it using pip install --upgrade langchain.
+
+3. Correct the import statement (if necessary): If the Agent class is part of a sub-module in the langchain package, we'll need to adjust the import statement accordingly. For example, if Agent is part of a agents sub-module, we would import it like this: from langchain.agents import Agent.
+
+By following these steps, we aim to resolve the AttributeError and ensure that the OpenAIAgent class can correctly extend the Agent class from the langchain package.
